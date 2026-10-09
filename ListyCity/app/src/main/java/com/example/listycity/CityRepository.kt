@@ -21,11 +21,11 @@ class CityRepository {
         citiesRef.document(city.name).set(city)
     }
 
+    fun delCity(city: City){
+        citiesRef.document(city.name).delete()
+    }
     fun updateCity(oldCity: City, updatedCity: City) {
-//        val index = _cities.indexOf(oldCity)
-//        if (index != -1) {
-//            _cities[index] = updatedCity
-//        }
+
         citiesRef.document(oldCity.name).set(updatedCity)
     }
     init {
